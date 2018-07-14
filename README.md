@@ -23,8 +23,6 @@ Drop-in react component for displaying numbers with animated transitions.
 
 ## In a basic html page
 
-Include 
-
 Include the UMD build in the `<head></head>` section of your html (also includes React, CSSTransitionGroup)
 
 ```html
