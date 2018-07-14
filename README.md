@@ -6,6 +6,10 @@
 
 Drop-in react component for displaying numbers with animated transitions.
 
+![alt text][logo]
+
+[logo]: https://github.com/rbpaul2/react-number-ticker/raw/master/preview-react-number-ticker-1.0.0.gif "Clock Demo"
+
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo
 
@@ -14,7 +18,6 @@ Drop-in react component for displaying numbers with animated transitions.
 
 [coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
 [coveralls]: https://coveralls.io/github/user/repo
-
 
 # How to use 
 
