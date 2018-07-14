@@ -1,13 +1,18 @@
+import './style.css'
 import React, {Component} from 'react'
 import {render} from 'react-dom'
 
-import Example from '../../src'
+import {ClockTicker} from './ClockTicker.js'
 
 class Demo extends Component {
   render() {
     return <div>
       <h1>react-number-ticker Demo</h1>
-      <Example/>
+      <div className="Demo-circle">
+      	<div className="circleBase">
+      <ClockTicker />
+      	</div>
+      </div>
     </div>
   }
 }

@@ -2,7 +2,7 @@ import expect from 'expect'
 import React from 'react'
 import {render, unmountComponentAtNode} from 'react-dom'
 
-import Component from 'src/'
+import ReactNumberTicker from 'src/'
 
 describe('Component', () => {
   let node
@@ -15,9 +15,9 @@ describe('Component', () => {
     unmountComponentAtNode(node)
   })
 
-  it('displays a welcome message', () => {
-    render(<Component/>, node, () => {
-      expect(node.innerHTML).toContain('Welcome to React components')
+  it('displays 0', () => {
+    render(<ReactNumberTicker value={[0, 0]}/>, node, () => {
+      expect(node.innerHTML).toContain('0')
     })
   })
 })
