@@ -14,3 +14,42 @@ Drop-in react component for displaying numbers with animated transitions.
 
 [coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
 [coveralls]: https://coveralls.io/github/user/repo
+
+
+# How to use 
+
+## In a basic html page
+
+Include 
+
+Include the UMD build in the `<head></head>` section of your html (also includes React, CSSTransitionGroup)
+
+```html
+<script src="https://unpkg.com/react-number-ticker@1.0.0/umd/react-number-ticker.min.js"></script>
+```
+
+Include the CSS file (Ticker uses CSS3 transition animations when changing digits)
+
+```html
+<script src="https://unpkg.com/react-number-ticker@1.0.0/umd/main.css"></script>
+```
+
+Write the something like this in the body of your html:
+
+```html
+<body>
+  <div id="root"></div>
+  <script>
+    ReactDOM.render(
+      React.createElement(ReactNumberTicker),
+      document.getElementById('root')
+    );
+  </script>
+</body>
+```
+
+# Use Cases
+
+- Dynamic numbers that change with user input 
+- Timers
+- (potentially) Sequence of words
