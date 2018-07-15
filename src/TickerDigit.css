@@ -14,7 +14,7 @@
   display: inline-block;
 }
 
-.tickerDigitWrapper > div.tickerDigit:nth-child(2n) {
+.tickerDigitWrapper > div.tickerDigit:not(:first-child) {
   position: absolute;
   right: 0px;
   display: inline-block;

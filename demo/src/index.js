@@ -8,7 +8,7 @@ class Demo extends Component {
   render() {
     return <div>
       <h1>react-number-ticker Demo</h1>
-      <div className="Demo-circle">
+      <div className="Demo-circle stretchy-wrapper">
       	<div className="circleBase">
       <ClockTicker />
       	</div>
