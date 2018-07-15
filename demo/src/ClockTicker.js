@@ -10,7 +10,7 @@ export class ClockTicker extends React.Component {
   componentDidMount() {
     this.timerID = setInterval(
       () => this.tick(),
-      1000
+      3000
     );
   }
 

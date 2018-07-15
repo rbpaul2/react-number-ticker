@@ -3,10 +3,21 @@
   overflow: hidden;
   position: relative;
   display: inline-block;
-  perspective: 1em;
+  perspective: 1.5em;
   line-height: 1;
   max-height: 1em;
   background: none;
+}
+
+.tickerDigitWrapper > div.tickerDigit {
+  position: relative;
+  display: inline-block;
+}
+
+.tickerDigitWrapper > div.tickerDigit:nth-child(2n) {
+  position: absolute;
+  right: 0px;
+  display: inline-block;
 }
 
 .tickerDigitIn {

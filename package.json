@@ -19,6 +19,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
+    "react-spring": "^5.4.0",
     "react-transition-group": "^2.4.0"
   },
   "peerDependencies": {
