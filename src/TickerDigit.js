@@ -32,9 +32,9 @@ class TickerDigit extends Component {
       <div className="tickerDigitWrapper">
         <Transition
             native
-            from={{ opacity: 0, transform: 'translate3d(0,-100%,-50px) rotateX(80deg)' }}
+            from={{ opacity: 0, transform: 'translate3d(0,-50%,-50px) rotateX(80deg)' }}
             enter={{ opacity: 1, transform: 'translate3d(0,0%,0%) rotateX(0)' }}
-            leave={{ opacity: 0, transform: 'translate3d(0,100%,-50px) rotateX(-80deg)' }}>
+            leave={{ opacity: 0, transform: 'translate3d(0,50%,-50px) rotateX(-80deg)' }}>
             {digits[this.props.value]}
         </Transition>
       </div>
