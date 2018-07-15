@@ -1,6 +1,6 @@
 {
   "name": "react-number-ticker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "react-number-ticker React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -19,7 +19,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "react-transition-group": "^2.4.0"
+    "react-spring": "^5.4.0"
   },
   "peerDependencies": {
     "react": "16.x"
@@ -32,7 +32,7 @@
   "author": "Rohan Paul",
   "homepage": "https://github.com/rbpaul2/react-number-ticker",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/rbpaul2/react-number-ticker",
   "keywords": [
     "react-component"
   ]

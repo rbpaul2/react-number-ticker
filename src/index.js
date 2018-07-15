@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import { CSSTransition } from 'react-transition-group';
 import { TickerDigit } from './TickerDigit.js'
 
 export default class ReactNumberTicker extends Component {
@@ -16,7 +15,7 @@ export default class ReactNumberTicker extends Component {
 
   render() {
     const digits = this.props.value.map((number, index) =>
-      <TickerDigit value={number} delay={((this.props.length-index)*50)}/>
+      <TickerDigit key={index} value={number} delay={((this.props.length-index)*50)}/>
     );
 
     return <div className="Ticker">

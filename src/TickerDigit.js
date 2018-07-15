@@ -2,113 +2,41 @@ import './TickerDigit.css'
 
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import { CSSTransition } from 'react-transition-group';
+import { Transition, animated } from 'react-spring'
+
+const digits = [
+  style => <animated.div className='tickerDigit 0' style={{ ...style}}>0</animated.div>,
+  style => <animated.div className='tickerDigit 1' style={{ ...style}}>1</animated.div>,
+  style => <animated.div className='tickerDigit 2' style={{ ...style}}>2</animated.div>,
+  style => <animated.div className='tickerDigit 3' style={{ ...style}}>3</animated.div>,
+  style => <animated.div className='tickerDigit 4' style={{ ...style}}>4</animated.div>,
+  style => <animated.div className='tickerDigit 5' style={{ ...style}}>5</animated.div>,
+  style => <animated.div className='tickerDigit 6' style={{ ...style}}>6</animated.div>,
+  style => <animated.div className='tickerDigit 7' style={{ ...style}}>7</animated.div>,
+  style => <animated.div className='tickerDigit 8' style={{ ...style}}>8</animated.div>,
+  style => <animated.div className='tickerDigit 9' style={{ ...style}}>9</animated.div>
+]
 
 class TickerDigit extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showCurr: true,
-      hidePrev: true,
-      prev: this.props.value
+      value: this.props.value
     };
-
-
-    
-
-    this.onDigitOutExit = this.onDigitOutExit.bind(this);
-    this.onDigitOutExited = this.onDigitOutExited.bind(this);
-
-    this.onDigitInEntered = this.onDigitInEntered.bind(this);
-
-    this.onDigitOutEntered = this.onDigitOutEntered.bind(this);
-  }
-
-  getSnapshotBeforeUpdate(prevProps, prevState) {
-    // Toggle show to start exit animation
-    if (prevProps.value != this.props.value)
-    {
-      //hide digit out and show digit in-> onDigitOutEntered
-      this.setState({
-        showCurr: true,
-        hidePrev: true,
-        prev: prevProps.value
-      });
-    }
-    return null;
-  }
-
-  componentDidUpdate() {
-
-  }
-
-  //Update state then for DigitIn in=true, on
-
-  onDigitOutExit() {
-  }
-
-
-  onDigitOutExited() {
-  }
-
-  onDigitInEntered(node, isAppearing) {
-    this.setState({ 
-      hidePrev: false,
-      prev: this.props.value
-    }); 
-  }
-
-  onDigitOutEntered(node, isAppearing) {
-    //if (isAppearing) return;
-    //exit digitin
-    this.setState({
-        showCurr: false
-    }); 
   }
 
   render() {
+
     return (
       <div className="tickerDigitWrapper">
-      <CSSTransition
-                    in={this.state.showCurr}
-                    timeout={{
-                             enter: 300,
-                             exit: 0
-                            }}
-                    classNames="tickerDigitIn"
-                    appear={true}
-                    onEntered={this.onDigitInEntered}
-                  >
-                    
-                    <div className="tickerDigitIn" 
-                          style={{
-                                    transitionDelay: (this.props.delay + 200) + "ms"
-                                }}
-                          >
-                          { this.props.value }
-                    </div>
-      </CSSTransition>
-      <CSSTransition
-                    in={!this.state.hidePrev}
-                    timeout={{
-                             enter: 0,
-                             exit: 300
-                            }}
-                    classNames="tickerDigitOut"
-                    appear={true}
-                    onEntered={this.onDigitOutEntered}
-                    onExited={this.onDigitOutExited}
-                    onExit={this.onDigitOutExit}
-                  >
-                    
-                    <div className="tickerDigitOut"
-                          style={{
-                                    transitionDelay: this.props.delay
-                                }}
-                          >
-                          { this.state.prev } 
-                    </div>
-      </CSSTransition>
+        <Transition
+            native
+            from={{ opacity: 0, transform: 'translate3d(0,-50%,-50px) rotateX(80deg)' }}
+            enter={{ opacity: 1, transform: 'translate3d(0,0%,0%) rotateX(0)' }}
+            leave={{ opacity: 0, transform: 'translate3d(0,50%,-50px) rotateX(-80deg)' }}>
+            {digits[this.props.value]}
+        </Transition>
       </div>
     )
   }
